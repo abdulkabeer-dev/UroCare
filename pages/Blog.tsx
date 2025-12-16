@@ -1,5 +1,5 @@
 import React from 'react';
-import { BLOG_POSTS } from '../content';
+import { BLOG_POSTS, DOCTOR_INFO } from '../content';
 import SEO from '../components/SEO';
 import { Calendar, User } from 'lucide-react';
 
@@ -8,7 +8,7 @@ const Blog: React.FC = () => {
     <>
       <SEO 
         title="Urology Health Blog" 
-        description="Read the latest articles and tips on kidney health, prostate care, and urological wellness from Dr. Sharma."
+        description="Read the latest articles and tips on kidney health, prostate care, and urological wellness from Dr. Vishnu."
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -32,7 +32,7 @@ const Blog: React.FC = () => {
                       <Calendar size={14} /> {post.date}
                     </span>
                     <span className="flex items-center gap-1">
-                       <User size={14} /> Dr. Sharma
+                       <User size={14} /> Dr. Vishnu
                     </span>
                   </div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer">

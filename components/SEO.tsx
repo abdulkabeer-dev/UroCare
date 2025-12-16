@@ -9,7 +9,10 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ title, description, schema }) => {
   useEffect(() => {
+    // 1. Title
     document.title = `${title} | ${DOCTOR_INFO.name}`;
+    
+    // 2. Meta Description
     let metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
@@ -18,7 +21,16 @@ const SEO: React.FC<SEOProps> = ({ title, description, schema }) => {
     }
     metaDescription.setAttribute('content', description);
 
-    // Schema
+    // 3. Canonical URL
+    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.setAttribute('href', window.location.href);
+
+    // 4. Schema.org JSON-LD
     const scriptId = 'json-ld-schema';
     let script = document.getElementById(scriptId) as HTMLScriptElement;
     if (!script) {
@@ -35,15 +47,35 @@ const SEO: React.FC<SEOProps> = ({ title, description, schema }) => {
       "image": "https://picsum.photos/400/500",
       "url": window.location.href,
       "telephone": DOCTOR_INFO.phone,
+      "priceRange": "$$",
+      "medicalSpecialty": [
+        "Urology",
+        "Renal Transplantation",
+        "Andrology"
+      ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "123 Medical Park",
-        "addressLocality": "Health City",
-        "postalCode": "560001",
-        "addressCountry": "US"
+        "streetAddress": "Kalyani Clinic, Opp. Vishwabharathi Hospital, Gayathri Estates",
+        "addressLocality": "Kurnool",
+        "addressRegion": "Andhra Pradesh",
+        "postalCode": "518001",
+        "addressCountry": "IN"
       },
-      "priceRange": "$$",
-      "medicalSpecialty": "Urology"
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "10:00",
+          "closes": "20:30"
+        }
+      ]
     };
 
     script.textContent = JSON.stringify(schema ? { ...baseSchema, ...schema } : baseSchema);

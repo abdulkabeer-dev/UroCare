@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { SERVICES } from '../content';
+import { SERVICES, DOCTOR_INFO } from '../content';
 import SEO from '../components/SEO';
 import { CheckCircle, AlertCircle, HelpCircle, Activity, Calendar } from 'lucide-react';
 
@@ -135,7 +135,7 @@ const TreatmentDetail: React.FC = () => {
                   <Link to="/appointment" className="block w-full text-center bg-blue-600 text-white px-4 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
                     Book Appointment
                   </Link>
-                  <a href="tel:+15551234567" className="block w-full text-center border border-slate-300 text-slate-700 px-4 py-3 rounded-lg font-bold hover:bg-slate-50 transition">
+                  <a href={`tel:${DOCTOR_INFO.phone.split(',')[0]}`} className="block w-full text-center border border-slate-300 text-slate-700 px-4 py-3 rounded-lg font-bold hover:bg-slate-50 transition">
                     Call Clinic
                   </a>
                 </div>

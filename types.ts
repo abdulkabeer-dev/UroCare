@@ -1,3 +1,4 @@
+
 export interface ServiceData {
   id: string;
   title: string;
@@ -32,4 +33,11 @@ export interface Testimonial {
 export interface FAQ {
   question: string;
   answer: string;
+}
+
+export interface GalleryImage {
+  id: number;
+  src: string;
+  alt: string;
+  caption: string;
 }

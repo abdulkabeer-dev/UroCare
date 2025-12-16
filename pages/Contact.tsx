@@ -1,14 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DOCTOR_INFO } from '../content';
 import SEO from '../components/SEO';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    subject: 'General Inquiry',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, phone, email, subject, message } = formData;
+    
+    // Construct email details
+    const mailSubject = `Website Inquiry: ${subject} - ${name}`;
+    const mailBody = `Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}`;
+    
+    // Open email client
+    window.location.href = `mailto:nvishnu44@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+  };
+
   return (
     <>
       <SEO 
-        title="Contact Us" 
-        description="Get in touch with Dr. UroCare Specialist. Visit our clinic or book an appointment online."
+        title="Contact Dr. Vishnu Vardhan Reddy | Urologist" 
+        description="Book an appointment with Dr. Vishnu at Uro Andro Care, Kurnool. Check clinic timings and location."
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -42,7 +73,6 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-bold text-lg text-slate-900 mb-1">Phone & WhatsApp</h3>
                     <p className="text-slate-600">{DOCTOR_INFO.phone}</p>
-                    <p className="text-slate-600">{DOCTOR_INFO.whatsapp}</p>
                   </div>
                 </div>
 
@@ -61,9 +91,11 @@ const Contact: React.FC = () => {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-slate-900 mb-1">Clinic Hours</h3>
-                    <p className="text-slate-600">Mon - Sat: 9:00 AM - 7:00 PM</p>
-                    <p className="text-slate-600">Sunday: Closed</p>
+                    <h3 className="font-bold text-lg text-slate-900 mb-1">Clinic Timings</h3>
+                    <p className="text-slate-600 font-semibold">Mon - Sat:</p>
+                    <p className="text-slate-600">Morning: 10:00 AM - 2:00 PM</p>
+                    <p className="text-slate-600">Evening: 5:30 PM - 8:30 PM</p>
+                    <p className="text-slate-500 mt-2 text-sm">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
@@ -85,24 +117,53 @@ const Contact: React.FC = () => {
             {/* Simple Contact Form */}
             <div className="bg-white rounded-2xl shadow-sm p-8">
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="John Doe" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                    placeholder="John Doe" 
+                  />
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-                    <input type="tel" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="+1 234..." />
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      placeholder="+91 98765..." 
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="john@example.com" />
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      placeholder="john@example.com" 
+                    />
                   </div>
                 </div>
                 <div>
                    <label className="block text-sm font-medium text-slate-700 mb-1">Subject</label>
-                   <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white">
+                   <select 
+                     name="subject"
+                     value={formData.subject}
+                     onChange={handleChange}
+                     className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                   >
                       <option>General Inquiry</option>
                       <option>Book Appointment</option>
                       <option>Feedback</option>
@@ -111,9 +172,17 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                  <textarea rows={5} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="How can we help you?"></textarea>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5} 
+                    className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                    placeholder="How can we help you?"
+                  ></textarea>
                 </div>
-                <button type="button" className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">
+                <button type="submit" className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">
                   Send Message
                 </button>
               </form>

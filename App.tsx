@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Appointment from './pages/Appointment';
 import FAQ from './pages/FAQ';
 import Services from './pages/Services';
+import Gallery from './pages/Gallery';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="treatment/:id" element={<TreatmentDetail />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />

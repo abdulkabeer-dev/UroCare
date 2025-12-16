@@ -1,202 +1,226 @@
-import { ServiceData, BlogPost, Testimonial, FAQ } from './types';
+
+import { ServiceData, BlogPost, Testimonial, FAQ, GalleryImage } from './types';
 
 export const DOCTOR_INFO = {
-  name: "Dr. Ananya Sharma",
-  title: "Senior Consultant Urologist & Andrologist",
-  qualifications: "MBBS, MS (Gen Surgery), MCh (Urology)",
-  experience: "15+ Years of Experience",
-  specializations: ["Kidney Stones", "Laser Prostate Surgery", "Male Infertility", "Laparoscopic Urology"],
-  memberships: ["Urological Society of India (USI)", "European Association of Urology (EAU)", "American Urological Association (AUA)"],
-  philosophy: "Providing compassionate, evidence-based urological care using the most advanced minimally invasive technologies to ensure faster recovery and better outcomes.",
-  address: "123 Medical Park, Wellness Avenue, Health City, HC 560001",
-  phone: "+1 (555) 123-4567",
-  email: "contact@drurologist.com",
-  whatsapp: "+1 (555) 987-6543",
-  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153166!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2a75d5b128!2sMedical%20Center!5e0!3m2!1sen!2sin!4v1645524652456!5m2!1sen!2sin"
+  name: "Dr. N. Vishnu Vardhan Reddy",
+  title: "Consultant Urologist, Andrologist & Renal Transplant Surgeon",
+  qualifications: "MS (Gen Surg), MCh (Urology)",
+  experience: "Ex- Consultant NIMS, Hyd",
+  regNo: "APMC/FMR/ 88453",
+  specializations: ["Endo Urology", "Renal Transplantation", "Laparoscopic Procedures", "Andrology", "Reconstructive Urology", "Paediatric Urology"],
+  memberships: ["Indian Medical Association (IMA)", "SOGUS AP", "Urological Society of India (USI)"],
+  achievements: [
+    "Best paper award in endourology and kidney transplantation in state conference",
+    "Best outgoing resident award during MCh training"
+  ],
+  philosophy: "Providing comprehensive urological care with advanced minimal invasive techniques for early recovery of patients. Specializing in 'No Cut, No Hole' procedures.",
+  address: "Dr. Vishnu's Uro Andro Care, Kalyani Clinic, Opp. Vishwabharathi Hospital, Gayathri Estates, Kurnool",
+  phone: "78424 10995, 90003 89927",
+  email: "nvishnu44@gmail.com",
+  whatsapp: "78424 10995",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.069455380536!2d78.03265431484555!3d15.83069198902788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e74c82555555%3A0x6b7b7b7b7b7b7b7b!2sGayathri%20Estates%2C%20Kurnool%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1645524652456"
 };
 
 export const SERVICES: ServiceData[] = [
   {
-    id: "kidney-stones",
-    title: "Kidney Stone Treatment",
-    shortDescription: "Advanced laser and shockwave therapies for painless stone removal.",
-    overview: "Kidney stones are hard deposits made of minerals and salts that form inside your kidneys. We offer comprehensive care ranging from medical management to advanced surgical interventions like RIRS and ESWL.",
-    symptoms: ["Severe, sharp pain in the side and back", "Pain that radiates to the lower abdomen and groin", "Pink, red or brown urine", "Nausea and vomiting", "Persistent need to urinate"],
-    causes: ["Dehydration", "High-protein, high-salt, or high-sugar diet", "Obesity", "Digestive diseases and surgery", "Family history"],
-    diagnosis: ["Blood testing", "Urine testing", "Imaging (CT scans, X-rays)", "Analysis of passed stones"],
-    treatment: ["Medical Expulsive Therapy", "Extracorporeal Shock Wave Lithotripsy (ESWL)", "Ureteroscopy (URS)", "Percutaneous Nephrolithotomy (PCNL)"],
-    advancedTech: "We use high-power Holmium Laser for precise stone fragmentation (RIRS) ensuring minimal damage to surrounding tissues.",
-    whenToSee: "Seek immediate medical attention if you experience severe pain, blood in urine, or difficulty passing urine along with fever.",
+    id: "endo-urology",
+    title: "Endo Urology",
+    shortDescription: "Minimally invasive endoscopic procedures: RIRS, URSL, PCNL, TURP, TURBT.",
+    overview: "Endo Urology involves performing surgical procedures within the urinary tract using endoscopic cameras and instruments, avoiding external incisions. This covers treatments for Kidney Stones, Enlarged Prostate (BPH), and Bladder Tumors.",
+    symptoms: ["Severe flank pain (Stones)", "Blood in urine", "Weak urine stream (Prostate)", "Frequent urination"],
+    causes: ["Kidney Stones", "Benign Prostatic Hyperplasia (BPH)", "Bladder Tumors"],
+    diagnosis: ["CT KUB", "Ultrasound", "Uroflowmetry"],
+    treatment: ["RIRS (Laser Procedure, Scareless)", "URSL", "PCNL", "CLT", "TURP", "TURBT"],
+    advancedTech: "Use of high-power Lasers for RIRS ('No Cut, No Hole') and Bipolar TURP.",
+    whenToSee: "For kidney stone pain, urinary blockage, or blood in urine.",
     faqs: [
-      { question: "Is kidney stone surgery painful?", answer: "Modern laser surgeries are minimally invasive and cause very little discomfort compared to traditional open surgeries." },
-      { question: "How can I prevent kidney stones?", answer: "Staying hydrated, reducing salt intake, and maintaining a balanced diet are key prevention strategies." }
+      { question: "What is RIRS?", answer: "RIRS (Retrograde Intrarenal Surgery) is a scareless laser procedure to remove kidney stones without cuts." },
+      { question: "What is TURP?", answer: "TURP is an endoscopic procedure to treat enlarged prostate by removing blocking tissue." }
     ]
   },
   {
-    id: "bph",
-    title: "Prostate Enlargement (BPH)",
-    shortDescription: "Minimally invasive treatments for urinary issues caused by enlarged prostate.",
-    overview: "Benign Prostatic Hyperplasia (BPH) is a common condition in men as they age. An enlarged prostate gland can cause uncomfortable urinary symptoms, such as blocking the flow of urine out of the bladder.",
-    symptoms: ["Frequent or urgent need to urinate", "Nocturia (increased frequency at night)", "Difficulty starting urination", "Weak urine stream", "Dribbling at the end of urination"],
-    causes: ["Aging", "Hormonal changes", "Family history"],
-    diagnosis: ["Digital Rectal Exam (DRE)", "Prostate-Specific Antigen (PSA) blood test", "Urine flow test", "Cystoscopy"],
-    treatment: ["Alpha-blockers & 5-alpha reductase inhibitors", "Transurethral Resection of the Prostate (TURP)", "Holmium Laser Enucleation of the Prostate (HoLEP)", "Prostatic Urethral Lift (UroLift)"],
-    advancedTech: "HoLEP (Holmium Laser Enucleation of the Prostate) allows for the removal of large prostates without open surgery, with minimal bleeding and faster recovery.",
-    whenToSee: "Consult a urologist if you are facing difficulty urinating or if your sleep is frequently disturbed by the need to urinate.",
+    id: "laparoscopic-procedures",
+    title: "Laparoscopic Procedures",
+    shortDescription: "Keyhole surgeries: Pyeloplasty, Nephrectomy, Adrenalectomy.",
+    overview: "Laparoscopic procedures are minimally invasive 'keyhole' surgeries used to treat structural defects or remove organs with minimal scarring and faster recovery.",
+    symptoms: ["Loin pain", "Abdominal masses", "Hypertension (Adrenal issues)"],
+    causes: ["UPJ Obstruction", "Non-functioning kidneys", "Adrenal tumors"],
+    diagnosis: ["CT Scan", "MRI", "Renal Scans"],
+    treatment: ["Pyeloplasty", "Nephrectomy", "Adrenalectomy"],
+    advancedTech: "Advanced 3D Laparoscopic systems for precise dissection and suturing.",
+    whenToSee: "If diagnosed with conditions requiring kidney removal or reconstruction.",
     faqs: [
-      { question: "Does BPH lead to prostate cancer?", answer: "No, BPH is not cancer and does not increase your risk of developing prostate cancer, though symptoms can be similar." }
+      { question: "Is laparoscopic surgery safe?", answer: "Yes, it is the standard of care for many urological conditions with excellent outcomes and less pain." }
     ]
   },
   {
-    id: "prostate-cancer",
-    title: "Prostate Cancer Care",
-    shortDescription: "Early detection and comprehensive oncological care for prostate health.",
-    overview: "Prostate cancer is one of the most common types of cancer. Many prostate cancers grow slowly and are confined to the prostate gland, where they may not cause serious harm. However, while some types of prostate cancer grow slowly and may need minimal or even no treatment, other types are aggressive and can spread quickly.",
-    symptoms: ["Trouble urinating", "Decreased force in the stream of urine", "Blood in the urine", "Blood in the semen", "Bone pain", "Losing weight without trying"],
-    causes: ["Genetic mutations", "Age (risk increases after 50)", "Race", "Family history", "Obesity"],
-    diagnosis: ["PSA Screening", "Digital Rectal Exam", "Ultrasound", "MRI Fusion Biopsy"],
-    treatment: ["Active Surveillance", "Radical Prostatectomy (Robotic/Laparoscopic)", "Radiation Therapy", "Hormone Therapy"],
-    advancedTech: "We utilize Robotic-Assisted Laparoscopic Radical Prostatectomy for precise removal of the prostate with nerve-sparing techniques to preserve urinary and sexual function.",
-    whenToSee: "Men over 50 (or 45 with family history) should discuss screening with a urologist.",
+    id: "reconstructive-urology",
+    title: "Reconstructive Urology",
+    shortDescription: "Restoring function: Ureteric Reimplantation, VVF Repair, BMG Urethroplasty.",
+    overview: "Reconstructive urology focuses on restoring the normal structure and function of the genitourinary tract resulting from trauma, disease, or congenital defects.",
+    symptoms: ["Urinary leakage", "Strictures (narrowing)", "Trauma sequelae"],
+    causes: ["Trauma", "Previous surgeries", "Infections"],
+    diagnosis: ["RGU/MCU", "Cystoscopy"],
+    treatment: ["Ureteric Reimplantation", "VVF Repair", "BMG Urethroplasty"],
+    advancedTech: "Use of buccal mucosa graft (BMG) for durable uretheral reconstruction.",
+    whenToSee: "If you have urethral strictures, urinary fistulas, or obstruction.",
     faqs: [
-      { question: "Is prostate cancer curable?", answer: "Yes, when detected early and confined to the prostate, the cure rates are very high." }
+      { question: "What is BMG Urethroplasty?", answer: "It is a surgery using inner cheek lining to repair narrowing in the urinary pipe (urethra)." }
     ]
   },
   {
-    id: "incontinence",
-    title: "Urinary Incontinence",
-    shortDescription: "Restoring control and confidence with specialized therapies.",
-    overview: "Urinary incontinence — the loss of bladder control — is a common and often embarrassing problem. The severity ranges from occasionally leaking urine when you cough or sneeze to having an urge to urinate that's so sudden and strong you don't get to a toilet in time.",
-    symptoms: ["Leaking urine when coughing/sneezing (Stress Incontinence)", "Sudden intense urge to urinate (Urge Incontinence)", "Frequent dribbling (Overflow Incontinence)"],
-    causes: ["Weak pelvic floor muscles", "Nerve damage", "Enlarged prostate", "Menopause", "Urinary Tract Infections"],
-    diagnosis: ["Urinalysis", "Bladder diary", "Post-void residual measurement", "Urodynamic testing"],
-    treatment: ["Pelvic floor exercises (Kegels)", "Bladder training", "Medications", "TVT/TOT Tape Surgeries", "Artificial Urinary Sphincter"],
-    advancedTech: "Advanced Urodynamics lab for precise diagnosis of bladder function issues.",
-    whenToSee: "If incontinence affects your daily activities or quality of life, seek help. It is often treatable.",
+    id: "renal-transplantation",
+    title: "Renal Transplantation",
+    shortDescription: "Expert surgical care for End-Stage Renal Disease.",
+    overview: "Renal transplantation is the best treatment option for kidney failure. We provide comprehensive evaluation and surgical services for kidney transplants.",
+    symptoms: ["Fatigue", "Swelling", "Reduced urine output", "High creatinine"],
+    causes: ["Chronic Kidney Disease", "Diabetes", "Hypertension"],
+    diagnosis: ["Blood tests", "HLA typing", "Cross-matching"],
+    treatment: ["Renal Transplantation"],
+    advancedTech: "Minimally invasive techniques for donor nephrectomy.",
+    whenToSee: "When diagnosed with CKD Stage 5 or ESRD.",
     faqs: [
-      { question: "Is incontinence a normal part of aging?", answer: "No, while more common as we age, it is not inevitable and can be treated successfully." }
+      { question: "What is the success rate?", answer: "Renal transplantation has a high success rate and significantly improves quality of life." }
     ]
   },
   {
-    id: "erectile-dysfunction",
-    title: "Erectile Dysfunction (ED)",
-    shortDescription: "Confidential and effective solutions for men's sexual health.",
-    overview: "Erectile dysfunction (impotence) is the inability to get and keep an erection firm enough for sex. Having erection trouble from time to time isn't necessarily a cause for concern. If erectile dysfunction is an ongoing issue, however, it can cause stress, affect your self-confidence and contribute to relationship problems.",
-    symptoms: ["Trouble getting an erection", "Trouble keeping an erection", "Reduced sexual desire"],
-    causes: ["Heart disease", "Diabetes", "Obesity", "Low testosterone", "Psychological causes"],
-    diagnosis: ["Physical exam", "Blood tests", "Penile Doppler Ultrasound", "Psychological exam"],
-    treatment: ["Oral medications", "Penile Injections", "Vacuum Erection Devices", "Penile Implants (Prosthesis)"],
-    advancedTech: "Low-intensity shockwave therapy (Li-ESWT) for vascular regeneration and penile implants for definitive management.",
-    whenToSee: "If you have persistent trouble with erections, consult early as it can be a sign of underlying heart disease.",
+    id: "uro-oncology",
+    title: "Uro Oncology",
+    shortDescription: "Cancer care for Kidney, Bladder, and Prostate.",
+    overview: "Specialized care for malignancies of the urinary tract. We offer surgical and medical management for various urological cancers.",
+    symptoms: ["Blood in urine", "Lump in abdomen", "Weight loss", "Bone pain"],
+    causes: ["Smoking", "Genetics", "Chemical exposure"],
+    diagnosis: ["CT/MRI", "Biopsy", "PET Scan"],
+    treatment: ["Radical Nephrectomy", "Radical Cystectomy", "Prostate Cancer Surgery"],
+    advancedTech: "Oncological clearance with organ preservation whenever possible.",
+    whenToSee: "Visible blood in urine or unexplained weight loss.",
     faqs: [
-      { question: "Can ED be cured?", answer: "Many cases are reversible, and almost all cases can be successfully managed with treatment." }
+      { question: "Is it curable?", answer: "Early detection leads to excellent cure rates in urological cancers." }
     ]
   },
   {
-    id: "male-infertility",
-    title: "Male Infertility",
-    shortDescription: "Evaluation and treatment to help you build your family.",
-    overview: "Male infertility is any health issue in a man that lowers the chances of his female partner getting pregnant. About 13 out of 100 couples can't get pregnant with unprotected sex. In over a third of infertility cases, the problem is with the man.",
-    symptoms: ["Problems with sexual function", "Pain, swelling or lump in the testicle area", "Recurrent respiratory infections", "Decreased facial or body hair"],
-    causes: ["Varicocele", "Infection", "Ejaculation issues", "Hormone imbalances", "Defects of tubules"],
-    diagnosis: ["Semen analysis", "Scrotal ultrasound", "Hormone testing", "Genetic tests"],
-    treatment: ["Varicocele repair (Microscopic Varicocelectomy)", "Antibiotic treatment", "Hormone replacement", "Sperm retrieval techniques (TESA/PESA)"],
-    advancedTech: "Microscopic Varicocelectomy allows for higher success rates in improving sperm quality compared to traditional surgery.",
-    whenToSee: "If you have been trying to conceive for a year without success, both partners should be evaluated.",
+    id: "andrology",
+    title: "Andrology",
+    shortDescription: "Male Infertility and Erectile Dysfunction care.",
+    overview: "Andrology deals with male reproductive health. We offer specialized treatments for male infertility, erectile dysfunction, and sexual health issues.",
+    symptoms: ["Inability to conceive", "Erectile difficulties", "Low libido"],
+    causes: ["Varicocele", "Hormonal imbalance", "Vascular issues"],
+    diagnosis: ["Semen Analysis", "Penile Doppler", "Hormone Profile"],
+    treatment: ["Male Infertility Treatment", "Erectile Dysfunction Treatment"],
+    advancedTech: "Micro-surgical techniques for varicocele repair.",
+    whenToSee: "If facing fertility issues or sexual dysfunction.",
     faqs: [
-      { question: "Is male infertility common?", answer: "Yes, it contributes to approximately 40-50% of all infertility cases." }
+      { question: "Can male infertility be treated?", answer: "Yes, many causes are treatable medically or surgically to improve fertility." }
     ]
   },
   {
-    id: "uti",
-    title: "UTI Treatment",
-    shortDescription: "Rapid relief and prevention strategies for recurrent infections.",
-    overview: "A urinary tract infection (UTI) is an infection in any part of your urinary system — your kidneys, ureters, bladder and urethra. Most infections involve the lower urinary tract — the bladder and the urethra.",
-    symptoms: ["Strong urge to urinate", "Burning sensation when urinating", "Passing frequent, small amounts of urine", "Cloudy urine", "Pelvic pain"],
-    causes: ["Bacteria entering the urinary tract", "Sexual activity", "Blockages like kidney stones", "Suppressed immune system"],
-    diagnosis: ["Urine sample analysis", "Urine culture", "CT scan (for recurrent cases)"],
-    treatment: ["Antibiotics", "Pain relievers", "Vaginal estrogen therapy (for postmenopausal women)"],
-    advancedTech: "Culture-sensitive antibiotic therapy to prevent resistance.",
-    whenToSee: "If you have symptoms of a UTI, especially if accompanied by fever or back pain.",
+    id: "paediatric-urology",
+    title: "Paediatric Urology",
+    shortDescription: "Hypospadias Repair, Herniotomy, Undescended Testis.",
+    overview: "Specialized care for urological problems in children, addressing congenital abnormalities and other conditions.",
+    symptoms: ["Abnormal urine stream", "Missing testis in scrotum", "Swelling"],
+    causes: ["Congenital defects"],
+    diagnosis: ["Ultrasound", "Clinical Examination"],
+    treatment: ["Hypospadias Repair", "Herniotomy", "Undescended Testis"],
+    advancedTech: "Magnification-assisted surgery for precision in small children.",
+    whenToSee: "If you notice genital abnormalities in your child.",
     faqs: [
-      { question: "Why do I keep getting UTIs?", answer: "Recurrent UTIs can be due to incomplete emptying of the bladder, stones, or anatomical issues that need investigation." }
-    ]
-  },
-   {
-    id: "pediatric-urology",
-    title: "Pediatric Urology",
-    shortDescription: "Specialized care for urological conditions in children.",
-    overview: "Pediatric urology focuses on congenital and acquired urological conditions in infants, children, and adolescents. We treat conditions like undescended testes, hypospadias, and bedwetting with utmost care.",
-    symptoms: ["Bedwetting after age 5", "Swelling in the scrotum", "Abnormal urine stream", "Recurrent UTIs in children"],
-    causes: ["Congenital birth defects", "Developmental delays", "Infections"],
-    diagnosis: ["Ultrasound", "Voiding Cystourethrogram (VCUG)", "Nuclear scans"],
-    treatment: ["Circumcision", "Orchidopexy (for undescended testis)", "Hypospadias repair", "Pyeloplasty"],
-    advancedTech: "Minimally invasive laparoscopic techniques adapted for pediatric patients for faster healing.",
-    whenToSee: "If your child has frequent urinary infections, pain, or visible abnormalities in the genital area.",
-    faqs: [
-      { question: "Is surgery safe for infants?", answer: "Yes, our specialized pediatric anesthesia and surgical teams ensure the highest safety standards for young patients." }
+      { question: "When should surgery be done?", answer: "Timing varies, but many are best corrected in early childhood (6-18 months)." }
     ]
   }
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: "symptoms-kidney-stones",
-    title: "Early Symptoms of Kidney Stones You Should Never Ignore",
-    excerpt: "Learn the warning signs of kidney stones and when to seek immediate medical help to avoid complications.",
+    id: "kidney-stone-prevention",
+    title: "Preventing Kidney Stones: Tips from Dr. Vishnu",
+    excerpt: "Kidney stones are painful but preventable. Learn about hydration and diet changes.",
     date: "October 15, 2023",
     category: "Kidney Health",
-    content: "Kidney stones can be silent until they start moving. The classic presentation is sudden, severe pain in the flank that radiates to the groin. Other subtle signs include pinkish urine, nausea, and a persistent urge to urinate. Ignoring these can lead to kidney damage or severe infection. Hydration is your first line of defense..."
+    content: "Kidney stones are often caused by dehydration and dietary habits. Drinking 3-4 liters of water a day is the best prevention..."
   },
   {
-    id: "laser-prostate-surgery",
-    title: "Laser Prostate Surgery: Benefits & Recovery Guide",
-    excerpt: "Why HoLEP and GreenLight laser surgeries are becoming the gold standard for BPH treatment.",
-    date: "September 22, 2023",
-    category: "Prostate Health",
-    content: "For men suffering from BPH, laser surgery offers a minimally invasive alternative to traditional TURP. Procedures like HoLEP result in less bleeding, shorter hospital stays (often 24 hours), and quicker return to normal activities. This guide covers what to expect before, during, and after the procedure..."
+    id: "rirs-surgery",
+    title: "RIRS: The No Cut, No Hole Surgery for Stones",
+    excerpt: "Understanding Retrograde Intrarenal Surgery (RIRS) and its benefits.",
+    date: "September 20, 2023",
+    category: "Endourology",
+    content: "RIRS is a revolutionary procedure where a flexible scope reaches the kidney through natural urinary passages to laser stones..."
   },
   {
-    id: "ed-causes-treatment",
-    title: "Why Men Experience Erectile Dysfunction & How to Treat It",
-    excerpt: "ED is often a vascular issue. Discover the modern treatments that are restoring confidence for men.",
+    id: "male-infertility-awareness",
+    title: "Addressing Male Infertility",
+    excerpt: "Infertility is not just a female issue. Male factors contribute to 50% of cases.",
     date: "August 10, 2023",
-    category: "Men's Health",
-    content: "Erectile dysfunction is not just a part of aging; it's a medical condition often linked to blood flow, diabetes, or heart health. Modern treatments range from PDE5 inhibitors to shockwave therapy and penile implants. Addressing ED early can also serve as a warning system for cardiovascular health..."
-  },
-  {
-    id: "prevent-recurrent-utis",
-    title: "How to Prevent Recurrent UTIs",
-    excerpt: "Practical lifestyle changes and medical advice to stop urinary tract infections from coming back.",
-    date: "July 05, 2023",
-    category: "Urinary Health",
-    content: "Recurrent UTIs can be frustrating. Prevention starts with hydration, proper hygiene, and sometimes prophylactic antibiotics. We also explore the role of cranberry supplements, probiotics, and voiding habits in maintaining a sterile urinary tract..."
-  },
-  {
-    id: "consult-urologist-early",
-    title: "Top Reasons to Consult a Urologist Early",
-    excerpt: "From blood in urine to changes in voiding patterns, knowing when to see a specialist can save your life.",
-    date: "June 18, 2023",
-    category: "General Urology",
-    content: "Many urological conditions, including cancers, are asymptomatic in early stages. Routine checkups for men over 50 (Prostate PSA) and immediate consultation for symptoms like hematuria (blood in urine) are critical. Early intervention in cases of stones or strictures prevents long-term kidney damage..."
+    category: "Andrology",
+    content: "Conditions like Varicocele can affect sperm production. Microsurgical repair can significantly improve fertility outcomes..."
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: 1, name: "Rajesh Kumar", condition: "Kidney Stone Surgery", text: "I was in excruciating pain due to a 12mm stone. Dr. Sharma performed RIRS laser surgery, and I was discharged the next day without any cuts. Amazing recovery!", rating: 5 },
-  { id: 2, name: "Amit Patel", condition: "Prostate Treatment", text: "Excellent care for my father's prostate issue. The laser surgery was successful, and his urinary flow is back to normal after years of struggle.", rating: 5 },
-  { id: 3, name: "Sarah Jenkins", condition: "UTI Treatment", text: "I struggled with recurrent UTIs for years. The doctor's diagnosis was spot on, and the treatment plan finally gave me relief. Highly recommended.", rating: 5 }
+  { id: 1, name: "Suresh Babu", condition: "Kidney Stone (RIRS)", text: "I underwent RIRS surgery by Dr. Vishnu. It was completely painless and I was discharged the next day. Excellent care!", rating: 5 },
+  { id: 2, name: "Rama Rao", condition: "Prostate Surgery", text: "Dr. Vishnu Reddy is very patient and explained the TURP procedure well. My father is recovering very well.", rating: 5 },
+  { id: 3, name: "Venkatesh", condition: "Male Infertility", text: "We consulted for fertility issues. Dr. Vishnu's treatment helped us. He is very knowledgeable in Andrology.", rating: 5 },
+  { id: 4, name: "Anitha K.", condition: "Kidney Stone Treatment", text: "The 'No Cut, No Hole' surgery was a miracle. I had no pain after surgery and Dr. Vishnu's team took great care of me.", rating: 5 },
+  { id: 5, name: "Ravi Kumar", condition: "Urinary Tract Infection", text: "Best urologist in Kurnool. I suffered for months before meeting Dr. Vishnu. His diagnosis was spot on.", rating: 5 },
+  { id: 6, name: "Mohammed Ali", condition: "Paediatric Urology", text: "We visited for my son's surgery. Dr. Vishnu is excellent with children and explained everything clearly to us.", rating: 5 }
 ];
 
 export const FAQS: FAQ[] = [
-  { question: "When should I see a urologist?", answer: "You should see a urologist if you experience blood in urine, severe flank pain, trouble urinating, leakage, or pain in the pelvic region." },
-  { question: "What causes kidney stones?", answer: "Dehydration, high salt intake, obesity, and family history are common causes. Certain medical conditions also contribute." },
-  { question: "Is prostate enlargement dangerous?", answer: "BPH itself is not dangerous but can lead to kidney damage or bladder stones if untreated. It is not cancer." },
-  { question: "What are the signs of urinary infection?", answer: "Burning sensation during urination, cloudy urine, strong odor, and pelvic pain are classic signs." },
-  { question: "What tests does a urologist perform?", answer: "Common tests include Urinalysis, PSA blood test, Ultrasound, Uroflowmetry, and Cystoscopy." },
-  { question: "Do you offer laser surgery?", answer: "Yes, we specialize in Holmium Laser for stones and prostate (HoLEP/ThuLEP)." },
-  { question: "How long is the recovery for kidney stone surgery?", answer: "For laser surgery (RIRS/URS), recovery is rapid. Most patients return to work within 2-3 days." },
-  { question: "Is male infertility treatable?", answer: "Yes, depending on the cause (like varicocele or hormonal imbalance), treatments can significantly improve fertility." },
-  { question: "Do I need a referral to book an appointment?", answer: "No, you can book an appointment directly with us via our website or phone." },
-  { question: "Do you accept insurance?", answer: "Yes, we accept all major insurance providers for surgical procedures." }
+  { question: "Where is the clinic located?", answer: "The clinic is located at Kalyani Clinic, Opp. Vishwabharathi Hospital, Gayathri Estates, Kurnool." },
+  { question: "What are the clinic timings?", answer: "Mon-Sat: 10am to 2pm (Morning) and 5.30pm to 8.30pm (Evening)." },
+  { question: "Do you perform Laser surgeries?", answer: "Yes, we specialize in RIRS and other laser procedures for stones (Endourology)." },
+  { question: "What is 'No Cut, No Hole' surgery?", answer: "It refers to endoscopic procedures like RIRS where stones are removed through natural passages without any external incision." },
+  { question: "Do you treat children?", answer: "Yes, Dr. Vishnu specializes in Paediatric Urology for conditions like Hypospadias and Undescended Testis." }
+];
+
+export const GALLERY_IMAGES: GalleryImage[] = [
+  {
+    id: 1,
+    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+    alt: "Modern Operation Theatre",
+    caption: "State-of-the-art Operation Theatre"
+  },
+  {
+    id: 2,
+    src: "https://images.unsplash.com/photo-1516549655169-df83a092fc96?auto=format&fit=crop&q=80&w=800",
+    alt: "Patient Consultation",
+    caption: "Private Consultation Rooms"
+  },
+  {
+    id: 3,
+    src: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800",
+    alt: "Advanced Laser Technology",
+    caption: "Advanced Laser Technology"
+  },
+  {
+    id: 4,
+    src: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800",
+    alt: "Patient Waiting Area",
+    caption: "Comfortable Waiting Lounge"
+  },
+  {
+    id: 5,
+    src: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800",
+    alt: "Clinic Exterior",
+    caption: "Clinic Entrance & Parking"
+  },
+  {
+    id: 6,
+    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+    alt: "Diagnostics Lab",
+    caption: "In-house Diagnostic Facilities"
+  },
+  {
+    id: 7,
+    src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
+    alt: "Friendly Nursing Staff",
+    caption: "Dedicated Nursing Staff"
+  },
+  {
+    id: 8,
+    src: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800",
+    alt: "Urology Equipment",
+    caption: "Modern Urological Equipment"
+  }
 ];

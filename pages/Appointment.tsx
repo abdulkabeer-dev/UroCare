@@ -4,9 +4,44 @@ import { Calendar, Check } from 'lucide-react';
 
 const Appointment: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    date: '',
+    time: 'Morning (9 AM - 12 PM)',
+    reason: 'Consultation'
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Construct email
+    const { firstName, lastName, phone, email, date, time, reason } = formData;
+    const mailSubject = `Appointment Request: ${firstName} ${lastName}`;
+    const mailBody = `New Appointment Request
+
+Patient Details:
+Name: ${firstName} ${lastName}
+Phone: ${phone}
+Email: ${email || 'Not provided'}
+
+Requested Slot:
+Date: ${date}
+Time: ${time}
+
+Reason for Visit:
+${reason}`;
+
+    // Trigger email client
+    window.location.href = `mailto:nvishnu44@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    
     setSubmitted(true);
     window.scrollTo(0, 0);
   };
@@ -26,9 +61,9 @@ const Appointment: React.FC = () => {
                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                  <Check size={40} />
                </div>
-               <h2 className="text-3xl font-bold text-slate-900 mb-4">Request Received!</h2>
+               <h2 className="text-3xl font-bold text-slate-900 mb-4">Request Initiated!</h2>
                <p className="text-lg text-slate-600 mb-8">
-                 Thank you for booking an appointment. Our team will contact you shortly to confirm your time slot.
+                 Your email client should have opened with the appointment details. Please click <strong>Send</strong> to finalize the request. Our team will verify and confirm your slot via phone/email.
                </p>
                <button onClick={() => setSubmitted(false)} className="text-blue-600 font-semibold hover:underline">
                  Book another appointment
@@ -55,33 +90,72 @@ const Appointment: React.FC = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">First Name *</label>
-                      <input required type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" />
+                      <input 
+                        type="text" 
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required 
+                        className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Last Name *</label>
-                      <input required type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" />
+                      <input 
+                        type="text" 
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required 
+                        className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number *</label>
-                      <input required type="tel" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" />
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required 
+                        className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Email (Optional)</label>
-                      <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" />
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Preferred Date *</label>
-                      <input required type="date" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" />
+                      <input 
+                        type="date" 
+                        name="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required 
+                        className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Preferred Time *</label>
-                      <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white">
+                      <select 
+                        name="time"
+                        value={formData.time}
+                        onChange={handleChange}
+                        className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                      >
                         <option>Morning (9 AM - 12 PM)</option>
                         <option>Afternoon (12 PM - 4 PM)</option>
                         <option>Evening (4 PM - 7 PM)</option>
@@ -91,7 +165,12 @@ const Appointment: React.FC = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Reason for Visit</label>
-                    <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white">
+                    <select 
+                      name="reason"
+                      value={formData.reason}
+                      onChange={handleChange}
+                      className="w-full bg-white text-slate-900 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                    >
                       <option>Consultation</option>
                       <option>Follow-up</option>
                       <option>Kidney Stone Pain</option>

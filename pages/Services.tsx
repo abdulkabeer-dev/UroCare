@@ -2,9 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../content';
 import SEO from '../components/SEO';
-import { ArrowRight, Activity } from 'lucide-react';
+import { ArrowRight, Zap, Scissors, RefreshCw, HeartHandshake, Shield, Users, Baby, Activity } from 'lucide-react';
 
 const Services: React.FC = () => {
+  
+  const getIcon = (id: string) => {
+    switch (id) {
+      case 'endo-urology': return <Zap size={32} strokeWidth={1.5} />;
+      case 'laparoscopic-procedures': return <Scissors size={32} strokeWidth={1.5} />;
+      case 'reconstructive-urology': return <RefreshCw size={32} strokeWidth={1.5} />;
+      case 'renal-transplantation': return <HeartHandshake size={32} strokeWidth={1.5} />;
+      case 'uro-oncology': return <Shield size={32} strokeWidth={1.5} />;
+      case 'andrology': return <Users size={32} strokeWidth={1.5} />;
+      case 'paediatric-urology': return <Baby size={32} strokeWidth={1.5} />;
+      default: return <Activity size={32} strokeWidth={1.5} />;
+    }
+  };
+
   return (
     <>
       <SEO 
@@ -21,31 +35,23 @@ const Services: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {SERVICES.map((service) => (
-              <div key={service.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
-                <div className="h-48 bg-slate-200 relative overflow-hidden">
-                   <img 
-                    src={`https://picsum.photos/600/400?random=${service.id.length}`} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                      <h3 className="text-white text-xl font-bold">{service.title}</h3>
-                   </div>
+              <div key={service.id} className="bg-white rounded-xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition duration-300 flex flex-col items-start group">
+                <div className="bg-blue-50 text-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                   {getIcon(service.id)}
                 </div>
-                <div className="p-6 flex-grow flex flex-col">
-                  <p className="text-slate-600 mb-6 flex-grow leading-relaxed">
-                    {service.shortDescription}
-                  </p>
-                  <Link 
-                    to={`/treatment/${service.id}`} 
-                    className="group flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-800 transition"
-                  >
-                    View Treatment Details 
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+                <h3 className="text-2xl font-bold text-blue-900 mb-3">{service.title}</h3>
+                <p className="text-slate-600 mb-6 flex-grow leading-relaxed">
+                  {service.shortDescription}
+                </p>
+                <Link 
+                  to={`/treatment/${service.id}`} 
+                  className="flex items-center gap-2 text-blue-600 font-bold hover:text-blue-800 transition"
+                >
+                  Learn More 
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             ))}
           </div>
