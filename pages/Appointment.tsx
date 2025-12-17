@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import { Calendar, Check } from 'lucide-react';
+import { DOCTOR_INFO } from '../content';
+import { Calendar, Check, MessageCircle } from 'lucide-react';
 
 const Appointment: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -22,26 +24,35 @@ const Appointment: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Construct email
-    const { firstName, lastName, phone, email, date, time, reason } = formData;
-    const mailSubject = `Appointment Request: ${firstName} ${lastName}`;
-    const mailBody = `New Appointment Request
+    // 1. Clean the doctor's phone number
+    const cleanNumber = DOCTOR_INFO.whatsapp.replace(/\D/g, '');
+    const formattedNumber = cleanNumber.length === 10 ? `91${cleanNumber}` : cleanNumber;
 
-Patient Details:
-Name: ${firstName} ${lastName}
-Phone: ${phone}
-Email: ${email || 'Not provided'}
+    // 2. Create the Professional WhatsApp Template
+    const message = `📅 *NEW APPOINTMENT REQUEST*
 
-Requested Slot:
-Date: ${date}
-Time: ${time}
+*Patient Details*
+Name: ${formData.firstName} ${formData.lastName}
+Phone: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
 
-Reason for Visit:
-${reason}`;
+*Preferred Slot*
+Date: ${formData.date}
+Time: ${formData.time}
 
-    // Trigger email client
-    window.location.href = `mailto:nvishnu44@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+*Reason for Visit*
+${formData.reason}
+
+--------------------------------
+Please confirm if this slot is available.`;
+
+    // 3. Construct URL
+    const url = `https://wa.me/${formattedNumber}?text=${encodeURIComponent(message)}`;
+
+    // 4. Open WhatsApp
+    window.open(url, '_blank');
     
+    // 5. Show local success state
     setSubmitted(true);
     window.scrollTo(0, 0);
   };
@@ -50,22 +61,35 @@ ${reason}`;
     <>
       <SEO 
         title="Book Appointment" 
-        description="Schedule a consultation with Dr. Sharma online. Choose your preferred time slot for urology checkup."
+        description="Schedule a consultation with Dr. Vishnu online via WhatsApp. Choose your preferred time slot for urology checkup."
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {submitted ? (
-            <div className="bg-white rounded-2xl shadow-sm p-12 text-center">
+            <div className="bg-white rounded-2xl shadow-sm p-12 text-center animate-fade-in">
                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                  <Check size={40} />
                </div>
-               <h2 className="text-3xl font-bold text-slate-900 mb-4">Request Initiated!</h2>
+               <h2 className="text-3xl font-bold text-slate-900 mb-4">Redirecting to WhatsApp...</h2>
                <p className="text-lg text-slate-600 mb-8">
-                 Your email client should have opened with the appointment details. Please click <strong>Send</strong> to finalize the request. Our team will verify and confirm your slot via phone/email.
+                 We have opened WhatsApp for you. Please hit the <strong>Send</strong> button in the chat to complete your booking request.
                </p>
-               <button onClick={() => setSubmitted(false)} className="text-blue-600 font-semibold hover:underline">
+               <div className="bg-blue-50 p-4 rounded-lg mb-8 max-w-md mx-auto">
+                 <p className="text-sm text-blue-800">
+                   <strong>Didn't open?</strong> <br/>
+                   <a 
+                     href={`https://wa.me/${DOCTOR_INFO.whatsapp.replace(/\D/g, '').length === 10 ? '91' + DOCTOR_INFO.whatsapp.replace(/\D/g, '') : DOCTOR_INFO.whatsapp.replace(/\D/g, '')}`}
+                     target="_blank"
+                     rel="noreferrer"
+                     className="underline font-bold"
+                   >
+                     Click here to open manually
+                   </a>
+                 </p>
+               </div>
+               <button onClick={() => { setSubmitted(false); setFormData({...formData, reason: 'Consultation'}); }} className="text-blue-600 font-semibold hover:underline">
                  Book another appointment
                </button>
             </div>
@@ -73,17 +97,18 @@ ${reason}`;
             <>
               <div className="text-center mb-10">
                 <h1 className="text-3xl font-bold text-slate-900 mb-2">Book an Appointment</h1>
-                <p className="text-slate-600">Fill in the details below and we will get back to you to confirm your slot.</p>
+                <p className="text-slate-600">Fill in the details below to request a slot via WhatsApp.</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
+              <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10 relative">
+                
                 <form onSubmit={handleSubmit} className="space-y-6">
                   
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 flex items-start gap-3 mb-6">
-                    <Calendar className="text-blue-600 mt-1" size={20} />
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-100 flex items-start gap-3 mb-6">
+                    <MessageCircle className="text-green-600 mt-1" size={20} />
                     <div>
-                      <h4 className="font-semibold text-blue-900 text-sm">Note</h4>
-                      <p className="text-blue-800 text-xs">Please arrive 15 minutes before your scheduled appointment time. Bring any previous medical reports.</p>
+                      <h4 className="font-semibold text-green-900 text-sm">Instant Booking</h4>
+                      <p className="text-green-800 text-xs">This form will redirect you to WhatsApp to send the details directly to Dr. Vishnu's team.</p>
                     </div>
                   </div>
 
@@ -180,12 +205,15 @@ ${reason}`;
                     </select>
                   </div>
 
-                  <button type="submit" className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg mt-4">
-                    Confirm Booking Request
+                  <button 
+                    type="submit" 
+                    className="w-full bg-[#25D366] text-white font-bold py-4 rounded-lg hover:bg-[#128c7e] transition shadow-lg mt-4 flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle size={20} /> Request via WhatsApp
                   </button>
 
                   <p className="text-xs text-center text-slate-500 mt-4">
-                    By submitting this form, you agree to our privacy policy and terms of service.
+                    By submitting this form, you will be redirected to WhatsApp to send the details.
                   </p>
                 </form>
               </div>

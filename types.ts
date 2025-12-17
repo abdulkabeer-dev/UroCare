@@ -41,3 +41,9 @@ export interface GalleryImage {
   alt: string;
   caption: string;
 }
+
+export interface EmailConfig {
+  serviceId: string;
+  templateId: string;
+  publicKey: string;
+}

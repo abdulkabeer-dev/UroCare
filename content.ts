@@ -1,5 +1,15 @@
 
-import { ServiceData, BlogPost, Testimonial, FAQ, GalleryImage } from './types';
+import { ServiceData, BlogPost, Testimonial, FAQ, GalleryImage, EmailConfig } from './types';
+
+// =========================================================================
+// EMAIL CONFIGURATION (Required for Contact Form ONLY)
+// Follow the instructions in the chat to fill these 3 values.
+// =========================================================================
+export const EMAIL_CONFIG: EmailConfig = {
+  serviceId: "YOUR_SERVICE_ID_HERE",  // e.g., "service_x93sk2"
+  templateId: "YOUR_TEMPLATE_ID_HERE", // e.g., "template_8ds32"
+  publicKey: "YOUR_PUBLIC_KEY_HERE",   // e.g., "user_823nsd..."
+};
 
 export const DOCTOR_INFO = {
   name: "Dr. N. Vishnu Vardhan Reddy",
