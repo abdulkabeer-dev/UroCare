@@ -27,7 +27,7 @@ export const DOCTOR_INFO = {
   address: "Dr. Vishnu's Uro Andro Care, Kalyani Clinic, Opp. Vishwabharathi Hospital, Gayathri Estates, Kurnool",
   phone: "78424 10995, 90003 89927",
   email: "nvishnu44@gmail.com",
-  whatsapp: "78424 10995",
+  whatsapp: "+91 90003 89927",
   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.069455380536!2d78.03265431484555!3d15.83069198902788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e74c82555555%3A0x6b7b7b7b7b7b7b7b!2sGayathri%20Estates%2C%20Kurnool%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1645524652456"
 };
 
