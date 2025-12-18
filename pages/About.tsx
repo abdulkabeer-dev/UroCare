@@ -1,7 +1,7 @@
 import React from 'react';
 import { DOCTOR_INFO } from '../content';
 import SEO from '../components/SEO';
-import { Award, BookOpen, User, Users, Star } from 'lucide-react';
+import { Award, BookOpen, User, Star } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -23,13 +23,14 @@ const About: React.FC = () => {
 
             <div className="grid md:grid-cols-12 gap-12 p-8 md:p-12">
               {/* Image Column */}
-              <div className="md:col-span-4">
+              <div className="md:col-span-4 space-y-6">
                 <img 
                   src="https://vexfore.com/wp-content/uploads/2025/12/gemini-3-pro-image-preview-2k-nano-banana-pro_a_professional_photogr.png" 
                   alt={DOCTOR_INFO.name} 
-                  className="w-full h-auto rounded-xl shadow-lg mb-6" 
+                  className="w-full h-auto rounded-xl shadow-lg" 
                   loading="lazy"
                 />
+                
                 <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
                   <h3 className="font-bold text-slate-900 mb-4">Quick Facts</h3>
                   <ul className="space-y-3 text-sm text-slate-600">
@@ -46,6 +47,29 @@ const About: React.FC = () => {
                       <span>Reg: {DOCTOR_INFO.regNo}</span>
                     </li>
                   </ul>
+                </div>
+
+                {/* Certificate Section */}
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                   <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                     <Award size={20} className="text-blue-600" /> Certifications
+                   </h3>
+                   <div className="border border-slate-200 rounded-lg p-2 bg-slate-50">
+                      {/* Placeholder for Certificate Image */}
+                      <img 
+                          src="/certificate.jpg" 
+                          onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = "https://vexfore.com/wp-content/uploads/2025/12/certificate.jpeg"; 
+                          }}
+                          alt="Urological Society of India Certificate" 
+                          className="w-full h-auto rounded shadow-sm hover:scale-105 transition-transform duration-300"
+                      />
+                   </div>
+                   <p className="text-sm text-center text-slate-600 mt-3 font-medium leading-tight">
+                     Full Life Member<br/>
+                     <span className="text-xs text-slate-500 font-normal">The Urological Society of India</span>
+                   </p>
                 </div>
               </div>
 
