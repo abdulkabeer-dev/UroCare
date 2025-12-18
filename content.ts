@@ -187,50 +187,26 @@ export const FAQS: FAQ[] = [
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
-    alt: "Modern Operation Theatre",
-    caption: "State-of-the-art Operation Theatre"
+    src: "https://vexfore.com/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-17-at-1.40.42-PM.jpeg?auto=format&fit=crop&q=80&w=800",
+    alt: "Clinic Gallery",
+    caption: "Clinic Gallery"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1516549655169-df83a092fc96?auto=format&fit=crop&q=80&w=800",
-    alt: "Patient Consultation",
-    caption: "Private Consultation Rooms"
+    src: "https://vexfore.com/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-17-at-1.40.43-PM-1.jpeg?auto=format&fit=crop&q=80&w=800",
+    alt: "Clinic Gallery",
+    caption: "Clinic Gallery"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800",
-    alt: "Advanced Laser Technology",
-    caption: "Advanced Laser Technology"
+    src: "https://vexfore.com/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-17-at-1.40.43-PM.jpeg?auto=format&fit=crop&q=80&w=800",
+    alt: "Clinic Gallery",
+    caption: "Clinic Gallery"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800",
-    alt: "Patient Waiting Area",
-    caption: "Comfortable Waiting Lounge"
+    src: "https://vexfore.com/wp-content/uploads/2025/12/gemini-3-pro-image-preview-2k-nano-banana-pro_a_adjust_the_image_lig-e1766060246402.png?auto=format&fit=crop&q=80&w=800",
+    alt: "Doctor",
+    caption: "Dr. Vishnu"
   },
-  {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800",
-    alt: "Clinic Exterior",
-    caption: "Clinic Entrance & Parking"
-  },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
-    alt: "Diagnostics Lab",
-    caption: "In-house Diagnostic Facilities"
-  },
-  {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
-    alt: "Friendly Nursing Staff",
-    caption: "Dedicated Nursing Staff"
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800",
-    alt: "Urology Equipment",
-    caption: "Modern Urological Equipment"
-  }
 ];

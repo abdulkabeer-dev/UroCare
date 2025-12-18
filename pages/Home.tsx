@@ -125,7 +125,7 @@ const Home: React.FC = () => {
                <div className="absolute -inset-4 bg-white/10 rounded-full blur-2xl"></div>
                {/* Updated Foreground Image: Doctor/Surgeon Portrait */}
                <img 
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600&h=600" 
+                src="https://vexfore.com/wp-content/uploads/2025/12/gemini-3-pro-image-preview-2k-nano-banana-pro_a_adjust_the_image_lig-e1766060246402.png" 
                 alt="Doctor Portrait" 
                 className="relative rounded-3xl shadow-2xl border-4 border-white/20 mx-auto w-3/4 object-cover"
                 loading="lazy"
@@ -141,9 +141,9 @@ const Home: React.FC = () => {
           <div className="bg-slate-50 rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100 flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/3">
               <img 
-                src="https://picsum.photos/400/500?random=2" 
+                src="https://vexfore.com/wp-content/uploads/2025/12/gemini-3-pro-image-preview-2k-nano-banana-pro_a_professional_photogr.png" 
                 alt={DOCTOR_INFO.name} 
-                className="rounded-xl shadow-md w-full object-cover h-80" 
+                className="rounded-xl shadow-md w-full object-cover object-top h-96" 
                 loading="lazy"
               />
             </div>

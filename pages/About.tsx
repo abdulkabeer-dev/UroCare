@@ -25,7 +25,7 @@ const About: React.FC = () => {
               {/* Image Column */}
               <div className="md:col-span-4">
                 <img 
-                  src="https://picsum.photos/500/600?random=3" 
+                  src="https://vexfore.com/wp-content/uploads/2025/12/gemini-3-pro-image-preview-2k-nano-banana-pro_a_professional_photogr.png" 
                   alt={DOCTOR_INFO.name} 
                   className="w-full h-auto rounded-xl shadow-lg mb-6" 
                   loading="lazy"
