@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { DOCTOR_INFO, EMAIL_CONFIG } from '../content';
+import { DOCTOR_INFO, EMAIL_CONFIG, PAGE_FAQS } from '../content';
 import SEO from '../components/SEO';
+import FAQAccordion from '../components/FAQAccordion';
 import { MapPin, Phone, Mail, Clock, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
@@ -72,6 +73,7 @@ const Contact: React.FC = () => {
       <SEO 
         title="Contact Dr. Vishnu Vardhan Reddy | Urologist" 
         description="Book an appointment with Dr. Vishnu at Uro Andro Care, Kurnool. Check clinic timings and location."
+        faqs={PAGE_FAQS.contact}
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -241,6 +243,17 @@ const Contact: React.FC = () => {
               )}
             </div>
 
+          </div>
+
+          {/* Contact FAQs */}
+          <div className="mt-16">
+            <FAQAccordion
+              title="Clinic Location & Logistics FAQ"
+              subtitle="Directions, timings, wheelchair accessibility, and helpline info for Kalyani Clinic Kurnool."
+              badge="Visiting Us"
+              faqs={PAGE_FAQS.contact}
+              showContactCTA={false}
+            />
           </div>
         </div>
       </div>

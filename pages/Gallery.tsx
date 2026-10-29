@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { GALLERY_IMAGES, DOCTOR_INFO } from '../content';
+import FAQAccordion from '../components/FAQAccordion';
+import { GALLERY_IMAGES, DOCTOR_INFO, PAGE_FAQS } from '../content';
 import { Image as ImageIcon } from 'lucide-react';
 
 const Gallery: React.FC = () => {
@@ -9,6 +10,7 @@ const Gallery: React.FC = () => {
       <SEO 
         title="Photo Gallery | Clinic Facilities & Infrastructure" 
         description={`View the modern facilities, operation theatres, and patient care areas at ${DOCTOR_INFO.name}'s clinic in Kurnool.`}
+        faqs={PAGE_FAQS.gallery}
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -54,6 +56,15 @@ const Gallery: React.FC = () => {
             </p>
           </div>
 
+          {/* Gallery FAQs */}
+          <div className="mt-16">
+            <FAQAccordion
+              title="Facilities & Technology FAQ"
+              subtitle="Details about diagnostic technology, operation theater standards, and partner hospital infrastructure."
+              badge="Infrastructure & Tech"
+              faqs={PAGE_FAQS.gallery}
+            />
+          </div>
         </div>
       </div>
     </>

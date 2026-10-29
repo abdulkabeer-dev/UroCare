@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SERVICES } from '../content';
+import { SERVICES, PAGE_FAQS } from '../content';
 import SEO from '../components/SEO';
+import FAQAccordion from '../components/FAQAccordion';
 import { ArrowRight, Zap, Scissors, RefreshCw, HeartHandshake, Shield, Users, Baby, Activity } from 'lucide-react';
 
 const Services: React.FC = () => {
@@ -24,6 +25,7 @@ const Services: React.FC = () => {
       <SEO 
         title="Urology Treatments & Services" 
         description="Comprehensive list of urology services offered including Kidney Stones, Prostate Cancer, BPH, and Male Infertility treatments."
+        faqs={PAGE_FAQS.services}
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -54,6 +56,16 @@ const Services: React.FC = () => {
                 </Link>
               </div>
             ))}
+          </div>
+
+          {/* Services Page FAQs */}
+          <div className="mt-16">
+            <FAQAccordion
+              title="Treatments & Procedures FAQ"
+              subtitle="Answers to common patient questions regarding minimally invasive options, surgery selection, and second opinions."
+              badge="Treatment Guidance"
+              faqs={PAGE_FAQS.services}
+            />
           </div>
 
           <div className="mt-16 bg-blue-600 rounded-2xl p-8 md:p-12 text-center text-white">

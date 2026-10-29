@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Activity, Shield, Clock, Phone, CheckCircle, Star, Zap, Droplets, Moon, Flame, AlertCircle, Users, Scissors, RefreshCw, HeartHandshake, Baby } from 'lucide-react';
 import SEO from '../components/SEO';
-import { SERVICES, DOCTOR_INFO, TESTIMONIALS } from '../content';
+import FAQAccordion from '../components/FAQAccordion';
+import { SERVICES, DOCTOR_INFO, TESTIMONIALS, PAGE_FAQS } from '../content';
 
 const SYMPTOMS = [
   {
@@ -89,6 +90,7 @@ const Home: React.FC = () => {
       <SEO 
         title="Best Urologist in Kurnool | Dr. Vishnu Vardhan Reddy" 
         description="Dr. N. Vishnu Vardhan Reddy is a leading Urologist in Kurnool, specializing in RIRS, Kidney Transplants, Andrology, and Laparoscopic Surgery."
+        faqs={PAGE_FAQS.home}
       />
       
       {/* Hero Section */}
@@ -392,6 +394,14 @@ const Home: React.FC = () => {
           }
         `}</style>
       </section>
+
+      {/* FAQs Section */}
+      <FAQAccordion
+        title="Frequently Asked Questions"
+        subtitle="Common queries answered directly regarding treatments, appointments, and laser surgeries at Dr. Vishnu's clinic."
+        badge="Patient Information"
+        faqs={PAGE_FAQS.home}
+      />
 
       {/* CTA */}
       <section className="py-20 bg-slate-50 text-center">

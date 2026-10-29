@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { SERVICES, DOCTOR_INFO } from '../content';
 import SEO from '../components/SEO';
+import FAQAccordion from '../components/FAQAccordion';
 import { CheckCircle, AlertCircle, HelpCircle, Activity, Calendar } from 'lucide-react';
 
 const TreatmentDetail: React.FC = () => {
@@ -17,6 +18,7 @@ const TreatmentDetail: React.FC = () => {
       <SEO 
         title={`${service.title} Treatment`} 
         description={service.shortDescription}
+        faqs={service.faqs}
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -107,17 +109,16 @@ const TreatmentDetail: React.FC = () => {
               </div>
 
               {service.faqs && service.faqs.length > 0 && (
-                 <div className="bg-white rounded-2xl shadow-sm p-8">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
-                    <div className="space-y-6">
-                      {service.faqs.map((faq, index) => (
-                        <div key={index} className="border-b border-slate-100 last:border-0 pb-4 last:pb-0">
-                          <h4 className="font-semibold text-slate-900 mb-2">{faq.question}</h4>
-                          <p className="text-slate-600">{faq.answer}</p>
-                        </div>
-                      ))}
-                    </div>
-                 </div>
+                <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
+                  <FAQAccordion
+                    title={`${service.title} FAQ`}
+                    subtitle={`Direct answers to common clinical questions regarding ${service.title.toLowerCase()} procedures, recovery, and outcomes.`}
+                    badge="Clinical Q&A"
+                    faqs={service.faqs}
+                    className="py-0 bg-transparent border-0"
+                    showContactCTA={false}
+                  />
+                </div>
               )}
 
             </div>

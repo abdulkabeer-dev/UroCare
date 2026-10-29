@@ -1,6 +1,7 @@
 import React from 'react';
-import { DOCTOR_INFO } from '../content';
+import { DOCTOR_INFO, PAGE_FAQS } from '../content';
 import SEO from '../components/SEO';
+import FAQAccordion from '../components/FAQAccordion';
 import { Award, BookOpen, User, Star } from 'lucide-react';
 
 const About: React.FC = () => {
@@ -9,6 +10,7 @@ const About: React.FC = () => {
       <SEO 
         title={`About ${DOCTOR_INFO.name} | Urologist Kurnool`} 
         description={`Learn more about ${DOCTOR_INFO.name}, a highly experienced urologist and renal transplant surgeon specializing in kidney stones and prostate care.`}
+        faqs={PAGE_FAQS.about}
       />
       
       <div className="bg-slate-50 min-h-screen py-12">
@@ -134,6 +136,16 @@ const About: React.FC = () => {
 
               </div>
             </div>
+          </div>
+
+          {/* About Page FAQs */}
+          <div className="mt-12">
+            <FAQAccordion
+              title="Questions About Dr. Vishnu's Practice"
+              subtitle="Get clear answers on medical degrees, surgical background, and patient care philosophy."
+              badge="Credentials & Expertise"
+              faqs={PAGE_FAQS.about}
+            />
           </div>
         </div>
       </div>

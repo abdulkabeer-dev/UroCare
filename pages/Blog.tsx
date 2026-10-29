@@ -1,6 +1,7 @@
 import React from 'react';
-import { BLOG_POSTS, DOCTOR_INFO } from '../content';
+import { BLOG_POSTS, DOCTOR_INFO, PAGE_FAQS } from '../content';
 import SEO from '../components/SEO';
+import FAQAccordion from '../components/FAQAccordion';
 import { Calendar, User } from 'lucide-react';
 
 const Blog: React.FC = () => {
@@ -9,6 +10,7 @@ const Blog: React.FC = () => {
       <SEO 
         title="Urology Health Blog" 
         description="Read the latest articles and tips on kidney health, prostate care, and urological wellness from Dr. Vishnu."
+        faqs={PAGE_FAQS.blog}
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -41,7 +43,7 @@ const Blog: React.FC = () => {
                   <p className="text-slate-600 mb-6 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <p className="text-slate-800 text-sm leading-relaxed border-l-4 border-blue-500 pl-4 bg-slate-50 py-2">
+                  <p className="text-slate-800 text-sm leading-relaxed border border-slate-200/80 rounded-lg p-4 bg-slate-50">
                      {post.content}
                   </p>
                   <div className="mt-6">
@@ -50,6 +52,16 @@ const Blog: React.FC = () => {
                 </div>
               </article>
             ))}
+          </div>
+
+          {/* Blog FAQs */}
+          <div className="mt-16">
+            <FAQAccordion
+              title="Patient Health & Literacy FAQ"
+              subtitle="Guidance on interpreting urological symptoms, hydration guidelines, and understanding when to consult a specialist."
+              badge="Health Insights"
+              faqs={PAGE_FAQS.blog}
+            />
           </div>
         </div>
       </div>

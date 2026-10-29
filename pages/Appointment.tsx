@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import { DOCTOR_INFO } from '../content';
+import FAQAccordion from '../components/FAQAccordion';
+import { DOCTOR_INFO, PAGE_FAQS } from '../content';
 import { Calendar, Check, MessageCircle } from 'lucide-react';
 
 const Appointment: React.FC = () => {
@@ -62,6 +63,7 @@ Please confirm if this slot is available.`;
       <SEO 
         title="Book Appointment" 
         description="Schedule a consultation with Dr. Vishnu online via WhatsApp. Choose your preferred time slot for urology checkup."
+        faqs={PAGE_FAQS.appointment}
       />
 
       <div className="bg-slate-50 min-h-screen py-12">
@@ -219,6 +221,17 @@ Please confirm if this slot is available.`;
               </div>
             </>
           )}
+
+          {/* Appointment FAQs */}
+          <div className="mt-12">
+            <FAQAccordion
+              title="Appointment & Consultation FAQ"
+              subtitle="Everything you need to know about booking, medical reports, consultation fees, and visiting Dr. Vishnu."
+              badge="Booking Assistance"
+              faqs={PAGE_FAQS.appointment}
+              showContactCTA={false}
+            />
+          </div>
         </div>
       </div>
     </>
