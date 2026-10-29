@@ -25,9 +25,9 @@ export const DOCTOR_INFO = {
   ],
   philosophy: "Providing comprehensive urological care with advanced minimal invasive techniques for early recovery of patients. Specializing in 'No Cut, No Hole' procedures.",
   address: "Dr. Vishnu's Uro Andro Care, Kalyani Clinic, Opp. Vishwabharathi Hospital, Gayathri Estates, Kurnool",
-  phone: "78424 10995, 90003 89927",
+  phone: "+91 78424 10995",
   email: "nvishnu44@gmail.com",
-  whatsapp: "+91 90003 89927",
+  whatsapp: "+91 78424 10995",
   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.069455380536!2d78.03265431484555!3d15.83069198902788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5e74c82555555%3A0x6b7b7b7b7b7b7b7b!2sGayathri%20Estates%2C%20Kurnool%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1645524652456"
 };
 
@@ -220,7 +220,7 @@ export const PAGE_FAQS = {
     { question: "Are diagnostic facilities like Uroflowmetry available at the clinic?", answer: "Yes, the clinic offers computerized uroflowmetry, microscopic urine analysis, diagnostic ultrasound coordination, and comprehensive male fertility workups." }
   ],
   appointment: [
-    { question: "How can I book an appointment with Dr. N. Vishnu Vardhan Reddy?", answer: "Appointments can be booked online through the website booking form, by calling the clinic directly at 78424 10995 or 90003 89927, or via WhatsApp at +91 90003 89927." },
+    { question: "How can I book an appointment with Dr. N. Vishnu Vardhan Reddy?", answer: "Appointments can be booked online through the website booking form, or by calling / WhatsApping the clinic directly at +91 78424 10995." },
     { question: "What documents and test reports should I bring to my appointment?", answer: "Please bring all prior medical records including ultrasound abdomen reports, CT KUB scans, X-rays, recent blood work (serum creatinine, blood urea, PSA), urine routine/culture reports, and a list of your current medications." },
     { question: "What is the consultation fee and what payment modes are accepted?", answer: "The consultation fee is transparent and affordable. The clinic accepts UPI payments (Google Pay, PhonePe, Paytm), credit/debit cards, and cash." },
     { question: "Are same-day walk-in appointments accommodated?", answer: "While scheduled appointments minimize waiting time, walk-in patients are always accommodated during daily OPD hours (10:00 AM - 2:00 PM and 5:30 PM - 8:30 PM)." },
@@ -229,7 +229,7 @@ export const PAGE_FAQS = {
   contact: [
     { question: "What is the exact landmark to reach Dr. Vishnu's Uro Andro Care?", answer: "The clinic is situated at Kalyani Clinic, directly opposite Vishwabharathi Hospital, in Gayathri Estates, Kurnool, Andhra Pradesh 518001." },
     { question: "Is parking and wheelchair accessibility available for elderly patients?", answer: "Yes, Kalyani Clinic has ground-floor accessibility with ramp access for wheelchairs, patient-friendly doorways, and parking space for two-wheelers and cars." },
-    { question: "What are the direct helpline numbers for the clinic?", answer: "You can reach Dr. Vishnu's clinical desk at 78424 10995 or 90003 89927 for appointments, prescription queries, and surgical coordination." },
+    { question: "What are the direct helpline numbers for the clinic?", answer: "You can reach Dr. Vishnu's clinical desk directly at +91 78424 10995 for appointments, prescription queries, and surgical coordination." },
     { question: "Are evening consultation hours convenient for office-goers?", answer: "Yes, evening consultations run from 5:30 PM to 8:30 PM Monday through Saturday, allowing working professionals to visit without taking time off during the day." }
   ],
   blog: [
@@ -256,7 +256,7 @@ export const FAQS: FAQ[] = [
   { category: "Andrology", question: "Can male infertility and low sperm count be treated?", answer: "Yes. Over 60% of male infertility cases stem from treatable conditions like varicoceles, hormone deficiencies, or blockages. Microsurgical varicocelectomy and personalized hormonal therapies offer high success rates." },
   { category: "Andrology", question: "Are male sexual health and erectile dysfunction consults kept confidential?", answer: "Absolutely. All andrology and sexual wellness consultations are conducted in complete privacy with compassionate, evidence-based medical care." },
   { category: "Paediatrics", question: "Does Dr. Vishnu treat urological conditions in infants and children?", answer: "Yes, Dr. Vishnu specializes in Paediatric Urology, offering microsurgical correction for congenital conditions including Hypospadias, Undescended Testis, PUJ Obstruction, and Vesicoureteral Reflux (VUR)." },
-  { category: "General", question: "How can I schedule an appointment?", answer: "You can book directly through our website booking form or call/WhatsApp the clinic at 78424 10995 or 90003 89927." },
+  { category: "General", question: "How can I schedule an appointment?", answer: "You can book directly through our website booking form or call/WhatsApp the clinic at +91 78424 10995." },
   { category: "General", question: "Are health insurance and cashless claims supported?", answer: "Yes, surgical procedures performed at our affiliated partner hospitals in Kurnool support cashless insurance coverage and reimbursement across leading private health insurances and government schemes." }
 ];
 

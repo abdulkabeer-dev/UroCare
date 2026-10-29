@@ -118,7 +118,7 @@ const Home: React.FC = () => {
                 <Link to="/appointment" className="bg-white text-blue-700 px-8 py-3.5 rounded-full font-bold shadow-lg hover:bg-blue-50 transition flex justify-center items-center gap-2">
                   Book Appointment <ArrowRight size={18} />
                 </Link>
-                <a href={`tel:${DOCTOR_INFO.phone.split(',')[0]}`} className="bg-transparent border-2 border-white text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition flex justify-center items-center gap-2">
+                <a href={`tel:${DOCTOR_INFO.phone.replace(/\s+/g, '')}`} className="bg-transparent border-2 border-white text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition flex justify-center items-center gap-2">
                   <Phone size={18} /> Call Now
                 </a>
               </div>
