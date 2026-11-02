@@ -225,7 +225,7 @@ const Layout: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-blue-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p>&copy; 2025 Dr. Vishnu's Uro Andro Care. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Developed by <a href="https://www.firststepdigitalagency.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 font-medium hover:text-white transition-colors">FirstStep Digital Agency</a>
+            Developed by <a href="https://www.firststepdigitalagency.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 font-medium hover:text-white transition-colors">FirstStep Digital Marketing Agency</a>
           </p>
         </div>
       </footer>
